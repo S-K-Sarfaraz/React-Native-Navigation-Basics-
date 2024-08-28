@@ -1,10 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Home = () => {
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { RootStackParamList } from '../App'
+
+type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
+
+const Home = ({navigation}: HomeProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.smallText}>Home</Text>
+      <Text style={styles.smallText}>Home Screen</Text>
+      <Button
+      title='Go to Details Screen'
+      onPress={() => navigation.navigate("Details",{
+        productId: '88'
+      })}
+      ></Button>
+      <Button
+      title='Go to Details Screen'
+      onPress={() => navigation.push("Details",{
+        productId: '88'
+      })}
+      ></Button>
     </View>
   )
 }
@@ -19,5 +36,8 @@ const styles = StyleSheet.create({
     },
     smallText:{
         color: 'black'
+    },
+    buttonNavigator:{
+
     }
 })
