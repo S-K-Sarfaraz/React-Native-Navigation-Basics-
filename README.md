@@ -62,6 +62,7 @@ export type RootStackParamList = {
   Details: {productId : string}
 };
 ```
+---
 
 ### At "Home.tsx"
 
@@ -96,6 +97,7 @@ onPress={() => navigation.replace("Details")
 ```
 onPress={() => navigation.push("Details")
 ```
+---
 
 ### At "Details.tsx"
 
