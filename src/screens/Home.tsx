@@ -9,19 +9,37 @@ type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>
 const Home = ({navigation}: HomeProps) => {
   return (
     <View style={styles.container}>
+
+
       <Text style={styles.smallText}>Home Screen</Text>
-      <Button
-      title='Go to Details Screen'
-      onPress={() => navigation.navigate("Details",{
-        productId: '88'
-      })}
-      ></Button>
-      <Button
-      title='Go to Details Screen'
-      onPress={() => navigation.push("Details",{
-        productId: '88'
-      })}
-      ></Button>
+      <View style={styles.marginContainer}>
+        <Button
+        title='Go to Details Screen with navigate'
+        onPress={() => navigation.navigate("Details",{
+          productId: '88'
+        })}
+        ></Button> 
+      </View>
+
+
+      <View style={styles.marginContainer}>
+        <Button
+        title='Go to Details Screen with push'
+        onPress={() => navigation.push("Details",{
+          productId: '88'
+        })}
+        ></Button>
+      </View>
+
+      <View style={styles.marginContainer}>
+        <Button
+        title='Go to Details Screen with replace'
+        onPress={() => navigation.replace("Details",{
+          productId: '88'
+        })}
+        ></Button>
+      </View>
+
     </View>
   )
 }
@@ -37,7 +55,7 @@ const styles = StyleSheet.create({
     smallText:{
         color: 'black'
     },
-    buttonNavigator:{
-
+    marginContainer:{
+      margin:20
     }
 })
